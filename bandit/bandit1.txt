@@ -1,0 +1,5 @@
+# Bandit Level 1
+
+- Log in to the level using the steps from Bandit Level 0.
+- Enter the command `cat readme` to print the contents of `readme` to stdout.
+- Log in to the next level using the username `bandit1` and the password from `readme`.
