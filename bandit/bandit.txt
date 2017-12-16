@@ -40,4 +40,28 @@
 
 # Bandit Level 6
 
+- Log into the level: `ssh -p 2220 bandit5@bandit.labs.overthewire.org`
+- We know what's in the current directory, so just run `cd inhere` to change directories.
+- This directory has a ton of folders with subfolders/files of their own. We'll need to take advantage of the `find` command. Run `find -size 1033c` to find all files that are 1033 bytes in size.
+- Only one file should show up. Run `cat ./maybehere07/.file2` to get the password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7.
 
+# Bandit Level 7
+
+- Log into the level: `ssh -p 2220 bandit6@bandit.labs.overthewire.org`
+- Since we have no idea where on the server the password could be, run `cd /` to change to the root directory.
+- Run `find -size 33c -user bandit7 -group bandit6` to find all files on the server that pass the filter.
+- A not-so-long list appears, and you can see that there's only one file that you have permission to access. Run `cat ./var/lib/dpkg/info/bandit7.password` to get the password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs.
+
+# Bandit Level 8
+
+- Log into the level: `ssh -p 2220 bandit7@bandit.labs.overthewire.org`
+- Run `grep millionth data.txt` to find the line with the password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV.
+
+# Bandit Level 9
+
+- Log into the level: `ssh -p 2220 bandit8@bandit.labs.overthewire.org`
+- We'll use piping here to execute multiple commands at once. First, we'll need to run `sort` to sort the lines alphabetically and then we can run `uniq -u` to only print non-repeating lines. Run `sort data.txt | uniq -u` to isolate the password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR.
+
+# Bandit Level 10
+
+- Log into the level: `ssh -p 2220 bandit9@bandit.labs.overthewire.org`
