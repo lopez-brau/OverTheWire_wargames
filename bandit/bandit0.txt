@@ -1,5 +1,0 @@
-# Bandit Level 0
-
-- This level introduces players to using `ssh` to gain access to a remote server on a specified port.
-- Log into the level: `ssh -p 2220 bandit0@bandit.labs.overthewire.org`.
-- Enter the password: bandit0.

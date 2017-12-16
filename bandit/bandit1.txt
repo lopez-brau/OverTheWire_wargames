@@ -1,5 +1,0 @@
-# Bandit Level 1
-
-- Log into the level: `ssh -p 2220 bandit0@bandit.labs.overthewire.org`
-- Run `cat readme` to print the contents of `readme`.
-- Log into the next level using the username `bandit1` and the password from the `readme` file: boJ9jbbUNNfktd78OOpsqOltutMc3MY1.

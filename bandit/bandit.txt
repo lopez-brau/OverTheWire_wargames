@@ -1,0 +1,43 @@
+# Bandit Level 0
+
+- This level introduces players to using `ssh` to gain access to a remote server on a specified port.
+- Log into the level: `ssh -p 2220 bandit0@bandit.labs.overthewire.org`.
+- Enter the password: bandit0.
+
+# Bandit Level 1
+
+- Log into the level: `ssh -p 2220 bandit0@bandit.labs.overthewire.org`
+- Run `cat readme` to print the contents of `readme`.
+- Log into the next level using the username `bandit1` and the password from the `readme` file: boJ9jbbUNNfktd78OOpsqOltutMc3MY1.
+
+# Bandit Level 2
+
+- Log into the level: `ssh -p 2220 bandit1@bandit.labs.overthewire.org`.
+- Run `ls` to see directory contents.
+- Since `-` is a special keyword, we can append additional directory information to avoid keyword issues. Run `cat ./-` to get the password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9.
+
+# Bandit Level 3
+
+- Log into the level: `ssh -p 2220 bandit2@bandit.labs.overthewire.org`
+- Run `ls` to see the contents of the current directory.
+- With spaces, you can rely on autocompletion by pressing tab or you can wrap the entire filename in quotation marks. Run `cat 'spaces in this filename'` to get the password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK.
+
+# Bandit Level 4
+
+- Log into the level: `ssh -p 2220 bandit3@bandit.labs.overthewire.org`
+- Run `ls` to see the contents of the current directory.
+- Run `cd inhere` to change directories.
+- Since we're looking for a hidden file, we'll need to run `ls -a` or `la` to see it.
+- Run `cat .hidden` and get the password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB.
+
+# Bandit Level 5
+
+- Log into the level: `ssh -p 2220 bandit4@bandit.labs.overthewire.org`
+- Run `ls` to see the contents of the current directory.
+- Run `cd inhere` to change directories.
+- Since we're looking for a human-readable file, we can use the `strings` command to print the contents of a file while filtering out non-printable characters. We also need to append additional directory information to avoid keyword issues.
+- Eventually, we see that running `strings ./-file07` has the password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh.
+
+# Bandit Level 6
+
+
