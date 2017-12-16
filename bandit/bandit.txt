@@ -6,7 +6,7 @@
 
 # Bandit Level 1
 
-- Log into the level: `ssh -p 2220 bandit0@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit0@bandit.labs.overthewire.org`.
 - Run `cat readme` to print the contents of `readme`.
 - Log into the next level using the username `bandit1` and the password from the `readme` file: boJ9jbbUNNfktd78OOpsqOltutMc3MY1.
 
@@ -18,13 +18,13 @@
 
 # Bandit Level 3
 
-- Log into the level: `ssh -p 2220 bandit2@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit2@bandit.labs.overthewire.org`.
 - Run `ls` to see the contents of the current directory.
-- With spaces, you can rely on autocompletion by pressing tab or you can wrap the entire filename in quotation marks. Run `cat 'spaces in this filename'` to get the password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK.
+- With spaces, we can rely on autocompletion by pressing tab or we can wrap the entire filename in quotation marks. Run `cat 'spaces in this filename'` to get the password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK.
 
 # Bandit Level 4
 
-- Log into the level: `ssh -p 2220 bandit3@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit3@bandit.labs.overthewire.org`.
 - Run `ls` to see the contents of the current directory.
 - Run `cd inhere` to change directories.
 - Since we're looking for a hidden file, we'll need to run `ls -a` or `la` to see it.
@@ -32,7 +32,7 @@
 
 # Bandit Level 5
 
-- Log into the level: `ssh -p 2220 bandit4@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit4@bandit.labs.overthewire.org`.
 - Run `ls` to see the contents of the current directory.
 - Run `cd inhere` to change directories.
 - Since we're looking for a human-readable file, we can use the `strings` command to print the contents of a file while filtering out non-printable characters. We also need to append additional directory information to avoid keyword issues.
@@ -40,28 +40,76 @@
 
 # Bandit Level 6
 
-- Log into the level: `ssh -p 2220 bandit5@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit5@bandit.labs.overthewire.org`.
 - We know what's in the current directory, so just run `cd inhere` to change directories.
 - This directory has a ton of folders with subfolders/files of their own. We'll need to take advantage of the `find` command. Run `find -size 1033c` to find all files that are 1033 bytes in size.
 - Only one file should show up. Run `cat ./maybehere07/.file2` to get the password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7.
 
 # Bandit Level 7
 
-- Log into the level: `ssh -p 2220 bandit6@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit6@bandit.labs.overthewire.org`.
 - Since we have no idea where on the server the password could be, run `cd /` to change to the root directory.
 - Run `find -size 33c -user bandit7 -group bandit6` to find all files on the server that pass the filter.
-- A not-so-long list appears, and you can see that there's only one file that you have permission to access. Run `cat ./var/lib/dpkg/info/bandit7.password` to get the password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs.
+- A not-so-long list appears, and we can see that there's only one file that we have permission to access. Run `cat ./var/lib/dpkg/info/bandit7.password` to get the password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs.
 
 # Bandit Level 8
 
-- Log into the level: `ssh -p 2220 bandit7@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit7@bandit.labs.overthewire.org`.
 - Run `grep millionth data.txt` to find the line with the password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV.
 
 # Bandit Level 9
 
-- Log into the level: `ssh -p 2220 bandit8@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit8@bandit.labs.overthewire.org`.
 - We'll use piping here to execute multiple commands at once. First, we'll need to run `sort` to sort the lines alphabetically and then we can run `uniq -u` to only print non-repeating lines. Run `sort data.txt | uniq -u` to isolate the password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR.
 
 # Bandit Level 10
 
-- Log into the level: `ssh -p 2220 bandit9@bandit.labs.overthewire.org`
+- Log into the level: `ssh -p 2220 bandit9@bandit.labs.overthewire.org`.
+- Run `strings data.txt | grep ===` to filter out all data except that which consists of printable characters and contain `===` to get the password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk.
+
+# Bandit Level 11
+
+- Log into the level: `ssh -p 2220 bandit10@bandit.labs.overthewire.org`.
+- Run `base64 -d data.txt` to decode the base64 data and get the password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+# Bandit Level 12
+
+- Log into the level: `ssh -p 2220 bandit11@bandit.labs.overthewire.org`.
+- Run `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' to get the password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu.
+
+# Bandit Level 13
+
+- Log into the level: `ssh -p 2220 bandit12@bandit.labs.overthewire.org`.
+- Run `cp data.txt /tmp/bandit12` to copy the file over to a directory where we can create additional files.
+- Run `xxd -r data.txt > tmp` to revert the hex dump back to its original binary form in a file called `tmp`.
+- Now we just run a series of extraction commands. Use the `file` command to see what kind of file we have and append the appropriate extension in order for the extraction command to execute properly.
+- The first compression method is gzip. Run `mv tmp tmp.gz` followed by `gunzip tmp.gz`.
+- The next compression method bzip2. Run `mv tmp tmp.bz2` followed by `bunzip2 tmp.bz2`.
+- The next compression method is gzip. Run `mv tmp tmp.gz` followed by `gunzip tmp.gz`.
+- The next compression method is tar. Run `mv tmp tmp.tar` followed by `tar -xf tmp.tar`.
+- To keep the workflow consistent, run `rm tmp.tar` and `mv data5.bin tmp`.
+- The next compression method is tar. Run `mv tmp tmp.tar` followed by `tar -xf tmp.tar`.
+- Again, to keep the workflow consistent, run `rm tmp.tar` and `mv data6.bin tmp`.
+- The next compression method is bzip2. Run `mv tmp tmp.bz2` followed by `bunzip2 tmp.bz2`.
+- The next compression method is tar. Run `mv tmp tmp.tar` followed by `tar -xf tmp.tar`.
+- Again, to keep the workflow consistent, run `rm tmp.tar` and `mv data8.bin tmp`.
+- The next compression method is gzip. Run `mv tmp tmp.gz` followed by `gunzip tmp.gz`.
+- Finally, run `cat tmp` to get the password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL.
+
+# Bandit Level 14
+
+- Log into the level: `ssh -p 2220 bandit13@bandit.labs.overthewire.org`.
+- Run `cat sshkey.private` and copy the contents to to a local folder. Let's name it `wargames_rsa`.
+- Log out of the level and navigate to the directory where we saved our private key. 
+- Run `mv wargames_rsa ~/.ssh` to place the key in the appropriate folder.
+- Run `ssh-keygen -y -f wargames_rsa > wargames_rsa.pub` to create the public key for this private key.
+- Now we can log into the next level.
+
+# Bandit Level 15
+
+- Log into the level: `ssh -p 2220 bandit14@bandit.labs.overthewire.org`.
+- Run `cd /etc/bandit_pass`.
+- Run `cat bandit14` to get the password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e.
+- Run `telnet -r localhost 30000` to connect to localhost on port 30000. Type the password and press enter to get the next password: BfMYroe26WYalil77FoDi9qh59eK5xNr.
+
+# Bandit Level 16
