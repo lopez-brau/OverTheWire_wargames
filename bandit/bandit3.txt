@@ -1,0 +1,5 @@
+# Bandit Level 3
+
+- Log into the level: `ssh -p 2220 bandit2@bandit.labs.overthewire.org`
+- Run `ls` to see the contents of the current directory.
+- With spaces, you can rely on autocompletion by pressing tab or you can wrap the entire filename in quotation marks. Run `cat 'spaces in this filename'` to get the password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK.
