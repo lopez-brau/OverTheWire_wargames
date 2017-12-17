@@ -1,5 +1,0 @@
-# Bandit Level 14
-
-- Log into the level and go to the directory `/etc/bandit_pass`.
-- You should be able to run `ls` to see the `bandit14` file.
-- Run `cat bandit14` to get the password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e.
