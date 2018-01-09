@@ -75,7 +75,7 @@
 # Bandit Level 12
 
 - Log into the level: `ssh -p 2220 bandit11@bandit.labs.overthewire.org`.
-- Run `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' to get the password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu.
+- Run `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' to get the password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu.`
 
 # Bandit Level 13
 
